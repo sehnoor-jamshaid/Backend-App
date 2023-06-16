@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "de546c57-65e5-4e3e-837f-280797dcf7f9",
+		"name": "Backend-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11741371"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"email\":\"ghazanfar666@gmail.com\"\r\n  \r\n   \r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/auth/forgetPwd",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"auth",
+								"forgetPwd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"email\":\"ghazanfaralik666@gmail.com\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "h{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/auth/login",
+							"host": [
+								"h{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ghazanfaralik666@gmail.com\",\r\n    \"password\":\"admin123[]\",\r\n    \"oldpassword\":\"admin123/?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/auth/reset-pwd",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"auth",
+								"reset-pwd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify otp",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ghazanfar666@gmail.com\",\r\n    \"otp\":\"335\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/auth/verify-otp?apiKey=abc123",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"auth",
+								"verify-otp"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "abc123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create Users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"email\":\"ghazanfar666@gmail.com\",\r\n    \"name\":\"Ghazanfar Ali\",\r\n    \"password\":\"admin123/?\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/user/createUser",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/user/getUsers?apiKey=abc123",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"user",
+								"getUsers"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "abc123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/user/getUsersById/64881fecca20da2fb0471fb0",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"user",
+								"getUsersById",
+								"64881fecca20da2fb0471fb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/user/delete/64748e2e67ca90fd5186520b",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"user",
+								"delete",
+								"64748e2e67ca90fd5186520b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/user/search?name=\"sehnoor\"&email=\"seh\"",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"user",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "\"sehnoor\""
+								},
+								{
+									"key": "email",
+									"value": "\"seh\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "pagination of products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/product/pagination/?pageSize=10&pageNumber=2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"product",
+								"pagination",
+								""
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

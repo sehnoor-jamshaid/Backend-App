@@ -1,7 +1,6 @@
 const { body, validationResult } = require("express-validator");
 const mongoose = require("mongoose");
 const connection = require("../../config/config");
-const bcrypt = require("bcrypt");
 require("dotenv").config();
 var jwt = require("jsonwebtoken");
 const jwtKey = process.env.JWT_KEY;

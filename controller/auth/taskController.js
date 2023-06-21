@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const connection = require("../../config/config");
 const task = require("../../models/taskModel");
 const ERRORS = require("../../Errors/errors");
-const bcrypt = require("bcrypt");
 require("dotenv").config();
 var jwt = require("jsonwebtoken");
 const { objectValidator } = require("../../utils/helpers");

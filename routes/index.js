@@ -4,7 +4,6 @@ const userRoutes=require('./userRoutes')
 const productRoutes=require('./productRoutes')
 const TaskRoutes=require("./taskRoutes")
 const router = express.Router();
-const bcryptjs=require("bcryptjs")
 
 router.use('/user',userRoutes)
 router.use('/auth',authRoutes)

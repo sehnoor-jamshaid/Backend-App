@@ -66,8 +66,11 @@ const loginUser = async (req, res) => {
     console.log("usersss", userExist);
     if (!userExist) throw Error(ERRORS.USER_NOTEXIST);
     const passwordMatch = await comparePassword(password, userExist.password);
+    console.log("passwordMatch",passwordMatch)
     if (!passwordMatch) throw Error(ERRORS.INVALID_CREDENTIALS);
     const token = await tokenGenerate(req.body);
+    const save=await model.findOneAndUpdate({ email:email },{bearerToken:token},{new:true})
+ console.log("save",save)
     delete userExist.password;
     return res.status(200).send({
       success: "true",

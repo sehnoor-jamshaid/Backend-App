@@ -7,7 +7,7 @@ const apiKeyValidator = (req, res, next) => {
         next()
     }
     else {
-        res.status(401).send({ error: "Unauthorized: Access Denied. Please provide a valid API key for authentication." })
+        res.status(401).send({ error:"Unauthorized: Access Denied. Please provide a valid API key for authentication." })
     }
 }
 

@@ -5,6 +5,10 @@ const UsersSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
+  bearerToken: {
+    type: String,
+    required:true
+}
 });
 
 UsersSchema.pre("save", async function (next) {

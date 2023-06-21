@@ -11,7 +11,9 @@ const cors = require('cors')
 const connection = require('./config/config')
 const model = require('./models/Usermodel')
 const verifyToken = require('./middleware/jwtverification')
-require('dotenv').config();
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+  }
 const routes = require('./routes');
 const errorHandler = require('./middleware/errorHandler')
 app.use(express.json());
@@ -23,8 +25,8 @@ const sslServer = https.createServer({
     key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
     cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem')),
 }, app)
-
-sslServer.listen(8080, () => {
-    console.log("Secure connection")
+const PORT = process.env.PORT || 3001;
+sslServer.listen(PORT, () => {
+    console.log("Secure connection",PORT)
 })
 

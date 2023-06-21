@@ -438,6 +438,139 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "filter Tasks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Complete project proposal\",\r\n  \"description\": \"Write a detailed project proposal document\",\r\n  \"status\": \"pending\",\r\n  \"dueDate\": \"2023-06-30\",\r\n  \"priority\": \"high\",\r\n  \"assignee\": \"John Doe\",\r\n  \"createdBy\": \"Jane Smith\",\r\n  \"completedAt\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/tasks/filterTask/?assignee=John",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"tasks",
+								"filterTask",
+								""
+							],
+							"query": [
+								{
+									"key": "assignee",
+									"value": "John"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Complete project proposal\",\r\n  \"description\": \"Write a detailed project proposal document\",\r\n  \"status\": \"pending\",\r\n  \"dueDate\": \"2023-06-30\",\r\n  \"priority\": \"high\",\r\n  \"assignee\": \"John Doe\",\r\n  \"createdBy\": \"Jane Smith\",\r\n  \"completedAt\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/tasks/createTask",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"tasks",
+								"createTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "abc123",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hhemFuZmFyIEFsaSIsImVtYWlsIjoiZ2hhemFuZmFyYWxpazY2NkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImdoYXphbmZhcjEyMy8_IiwiaWF0IjoxNjg2NTUwNjI3fQ.nsDfidCdJUriVuys9LA_sgEG7G_Vg75_4IYW9q2z6zk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/app/{{VERSION}}/api/tasks/delete/64900a092c6cc6c110aed058",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"app",
+								"{{VERSION}}",
+								"api",
+								"tasks",
+								"delete",
+								"64900a092c6cc6c110aed058"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
